@@ -2,6 +2,8 @@
 
 - Vite 
 - congig TailwindCSS
+- Header and Logo
+- 
 
 
 # Features
