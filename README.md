@@ -3,7 +3,8 @@
 - Vite 
 - congig TailwindCSS
 - Header and Logo
-- 
+- Login form 
+- Sign Up Form 
 
 
 # Features
