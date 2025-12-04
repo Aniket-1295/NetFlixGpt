@@ -3,8 +3,15 @@
 - Vite 
 - congig TailwindCSS
 - Header and Logo
+- Routing of App
 - Login form 
 - Sign Up Form 
+- Form validation
+- useRef Hook
+- Firebase Set UP 
+- deploying (pending.. )
+- Regestaring a user First Time(auth setting...)
+
 
 
 # Features
