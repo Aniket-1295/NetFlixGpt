@@ -11,6 +11,7 @@
 - Firebase Set UP 
 - deploying (pending.. )
 - Regestaring a user First Time(auth setting...)
+- Deploy (DONE) [Hoisted URL](https://netflixgpt-41bf1.web.app/login)
 
 
 
