@@ -11,8 +11,9 @@
 - Firebase Set UP 
 - deploying (pending.. )
 - Deploy (DONE) [Hoisted URL](https://netflixgpt-41bf1.web.app/login)
-- Regestaring a user First Time(auth setting...) (DONE)
+- Regestaring a user First Time(auth setting...) 
 - Loged in Sussfully
+- Creates Redux Store with UserSlice
 
  
 
