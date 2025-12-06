@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { validateFields } from "../utils/validate";
+import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
@@ -10,10 +11,12 @@ import {
 import { auth } from "../utils/firebase.config";
 
 const Login = () => {
+
+  const navigate = useNavigate();
   const [toggleform, setToggleform] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
-  //11st way
+  //1.st way
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   // const [fullname, setFullname] = useState("");
@@ -60,6 +63,10 @@ const Login = () => {
             emailRef.current.value = "";
             passwordRef.current.value = "";
             fullnameRef.current.value = "";
+
+            setToggleform(true);
+
+
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -69,7 +76,8 @@ const Login = () => {
             setErrorMessage(errorCode + " " + errorMessage);
           });
       }
-    } else {
+    } 
+    else {
       const error = validateFields(email, password);
       if (error) {
         setErrorMessage(error);
@@ -83,10 +91,12 @@ const Login = () => {
             const user = userCredential.user;
             console.log(user);
             // ...
-
+            
             emailRef.current.value = "";
             passwordRef.current.value = "";
             setErrorMessage("");
+
+            navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;

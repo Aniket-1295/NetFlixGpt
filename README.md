@@ -14,7 +14,7 @@
 - Regestaring a user First Time(auth setting...) 
 - Loged in Sussfully
 - Creates Redux Store with UserSlice
-
+- add user to the Redux store
  
 
 
