@@ -2,17 +2,23 @@ import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { validateFields } from "../utils/validate";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/slices/userSlice";
 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile
 } from "firebase/auth";
 
 import { auth } from "../utils/firebase.config";
 
 const Login = () => {
 
+
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [toggleform, setToggleform] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -58,7 +64,25 @@ const Login = () => {
           .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
-            console.log(user);
+            updateProfile(user,{
+              displayName: fullname, photoURL: "https://res.cloudinary.com/daxugagt0/image/upload/v1764598691/pnpc4lysz4q9e1jqb4rx.jpg"
+            }).then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+
+             
+            }).catch((error) => {
+              setErrorMessage(error.message);
+            });
+
+            
 
             emailRef.current.value = "";
             passwordRef.current.value = "";
@@ -72,7 +96,7 @@ const Login = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log(errorCode, errorMessage);
+            // console.log(errorCode, errorMessage);
             setErrorMessage(errorCode + " " + errorMessage);
           });
       }
@@ -89,7 +113,7 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            console.log(user);
+            // console.log(user);
             // ...
             
             emailRef.current.value = "";
@@ -102,7 +126,7 @@ const Login = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-            console.log(errorCode, errorMessage);
+            // console.log(errorCode, errorMessage);
             setErrorMessage(errorCode + " " + errorMessage);
           });
       }
