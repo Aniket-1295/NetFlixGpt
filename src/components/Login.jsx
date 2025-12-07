@@ -135,16 +135,17 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
+      <div className="absolute ">
         <img
-          className="h-screen w-screen object-cover"
+          className="h-screen w-screen object-cover lg:h-screen lg:w-screen" 
           src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="Background Netflix"
         />
       </div>
 
-      <form className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-90 z-20">
-        <h2 className="text-4xl font-semibold my-1.5 rounded-lg sm:w-6/12">
+      <form className="w-full  md:w-3/12 absolute p-12  bg-black/80 my-36 mx-auto right-0 left-0 text-white rounded-lg">
+
+        <h2 className="text-4xl font-semibold my-1.5 rounded-lg sm:w-6/12 ">
           {toggleform ? "Sign In" : "Sign Up"}
         </h2>
 
