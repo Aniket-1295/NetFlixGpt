@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { validateFields } from "../utils/validate";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/slices/userSlice";
+import { BG_URL,DEFAULT_AVATAR_URL } from "../utils/constant";
 
 import {
   createUserWithEmailAndPassword,
@@ -14,7 +15,7 @@ import {
 import { auth } from "../utils/firebase.config";
 
 const Login = () => {
-  const navigate = useNavigate();
+  
   const dispatch = useDispatch();
   const [toggleform, setToggleform] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -64,7 +65,7 @@ const Login = () => {
             updateProfile(user, {
               displayName: fullname,
               photoURL:
-                "https://res.cloudinary.com/daxugagt0/image/upload/v1764598691/pnpc4lysz4q9e1jqb4rx.jpg",
+                DEFAULT_AVATAR_URL,
             })
               .then(() => {
                 const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -132,7 +133,7 @@ const Login = () => {
       <div className="absolute ">
         <img
           className="h-screen w-screen object-cover lg:h-screen lg:w-screen"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={BG_URL}
           alt="Background Netflix"
         />
       </div>
