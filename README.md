@@ -19,6 +19,11 @@
 - BUG Fixed : restrict /browse page by checking auth status using onAuthStateChange listener 
 - Good Practice : when the componant unmount we have to remove the event listener so we here we have manage the unsubscribe to onAuthStateChange.
 - Good Practice: adding constant file to the project 
+- create the account on TMDB 
+- get the API KEY and API accessToken
+- set the API_OPTIONS and Bearer token (in .env)
+- make an API call successfully and get the data
+- 
  
 
 
