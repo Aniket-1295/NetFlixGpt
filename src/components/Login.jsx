@@ -8,15 +8,12 @@ import { addUser } from "../utils/slices/userSlice";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile
+  updateProfile,
 } from "firebase/auth";
 
 import { auth } from "../utils/firebase.config";
 
 const Login = () => {
-
-
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [toggleform, setToggleform] = useState(true);
@@ -50,7 +47,7 @@ const Login = () => {
     const password = passwordRef.current ? passwordRef.current.value : "";
     const fullname = fullnameRef.current ? fullnameRef.current.value : "";
 
-    // const error = validateFields(email,password,fullname);
+   
 
     if (toggleform === false) {
       const error = validateFields(email, password, fullname);
@@ -64,33 +61,31 @@ const Login = () => {
           .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
-            updateProfile(user,{
-              displayName: fullname, photoURL: "https://res.cloudinary.com/daxugagt0/image/upload/v1764598691/pnpc4lysz4q9e1jqb4rx.jpg"
-            }).then(() => {
-              const { uid, email, displayName, photoURL } = auth.currentUser;
-              dispatch(
-                addUser({
-                  uid: uid,
-                  email: email,
-                  displayName: displayName,
-                  photoURL: photoURL,
-                })
-              );
-
-             
-            }).catch((error) => {
-              setErrorMessage(error.message);
-            });
-
-            
+            updateProfile(user, {
+              displayName: fullname,
+              photoURL:
+                "https://res.cloudinary.com/daxugagt0/image/upload/v1764598691/pnpc4lysz4q9e1jqb4rx.jpg",
+            })
+              .then(() => {
+                const { uid, email, displayName, photoURL } = auth.currentUser;
+                dispatch(
+                  addUser({
+                    uid: uid,
+                    email: email,
+                    displayName: displayName,
+                    photoURL: photoURL,
+                  })
+                );
+              })
+              .catch((error) => {
+                setErrorMessage(error.message);
+              });
 
             emailRef.current.value = "";
             passwordRef.current.value = "";
             fullnameRef.current.value = "";
 
             setToggleform(true);
-
-
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -100,8 +95,7 @@ const Login = () => {
             setErrorMessage(errorCode + " " + errorMessage);
           });
       }
-    } 
-    else {
+    } else {
       const error = validateFields(email, password);
       if (error) {
         setErrorMessage(error);
@@ -115,12 +109,12 @@ const Login = () => {
             const user = userCredential.user;
             // console.log(user);
             // ...
-            
+
             emailRef.current.value = "";
             passwordRef.current.value = "";
             setErrorMessage("");
 
-            navigate("/browse");
+            // navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -137,14 +131,13 @@ const Login = () => {
       <Header />
       <div className="absolute ">
         <img
-          className="h-screen w-screen object-cover lg:h-screen lg:w-screen" 
+          className="h-screen w-screen object-cover lg:h-screen lg:w-screen"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="Background Netflix"
         />
       </div>
 
       <form className="w-full  md:w-3/12 absolute p-12  bg-black/80 my-36 mx-auto right-0 left-0 text-white rounded-lg">
-
         <h2 className="text-4xl font-semibold my-1.5 rounded-lg sm:w-6/12 ">
           {toggleform ? "Sign In" : "Sign Up"}
         </h2>

@@ -15,7 +15,10 @@
 - Loged in Sussfully
 - Creates Redux Store with UserSlice
 - add user to the Redux store(after login and register)
-- remove user form the redx store (after Logout) 
+- remove user form the redx store (after Logout)
+- BUG Fixed : restrict /browse page by checking auth status using onAuthStateChange listener 
+- Good Practice : when the componant unmount we have to remove the event listener so we here we have manage the unsubscribe to onAuthStateChange.
+- Good Practice: adding constant file to the project 
  
 
 
