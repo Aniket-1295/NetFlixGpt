@@ -23,7 +23,19 @@
 - get the API KEY and API accessToken
 - set the API_OPTIONS and Bearer token (in .env)
 - make an API call successfully and get the data
-- 
+- Adding Movies Data to the store 
+      - createSlice =>movieSlice 
+      - add to the store => movie:movieSlice
+      - dispatch an action and store movie data in to the redux store 
+- cleanup the Browse.jsx componant 
+      - remove the fetch logic from here and just keep for rendring purpose 
+      - create a custome hook and jsut call inside the Browse component and get the movies list 
+- custom Hook =>useGetNowPlayingMovies()
+       - contract as follows
+           - API CALL 
+           - GET THE DATA
+           - STORE TO THE REDUX STORE
+      
  
 
 
