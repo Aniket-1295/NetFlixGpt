@@ -16,7 +16,7 @@ const useGetNowPlayingMovies = () => {
       const data = await fetch(NOW_PLAYING_MOVIES_URL, API_OPTIPONS);
 
       const json = await data.json();
-      console.log("json", json?.results);
+      // console.log("json", json?.results);
       dispatch(addNowPlayingMovies(json?.results));
     } catch (error) {
       console.log(error);
