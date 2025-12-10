@@ -1,12 +1,23 @@
 import React from "react";
-import { useEffect,useState} from "react";
+import { useEffect} from "react";
 import { API_OPTIPONS } from "../utils/constant";
+import { useDispatch, useSelector } from "react-redux";
+import { addTrailerVideo } from "../utils/slices/movieSlice";
+
 
 const VideoBackround = ({ movieId }) => {
 
 
+  //2nd way
+  const videoKey = useSelector((store) => store.movie?.trailerVideo)
 
-  const [videoKey, setVideoKey] = useState("");
+  //2nd way
+  const dispatch = useDispatch()
+
+
+
+  //1 st way to get the video key
+  // const [videoKey, setVideoKey] = useState("");
 
 
   
@@ -59,8 +70,9 @@ const VideoBackround = ({ movieId }) => {
 
         const trailer =
           filteredVideos.length !== 0 ? filteredVideos[0] : json.results[0];
+          dispatch(addTrailerVideo(trailer?.key))
 
-        setVideoKey(trailer?.key);
+        // setVideoKey(trailer?.key);
       } catch (error) {
         console.log(error);
       }

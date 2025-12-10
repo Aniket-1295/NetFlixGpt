@@ -79,7 +79,9 @@ using onAuthStateChange listener
     - we can create local state & make it dynamic.
     - we can put the trailer on redxStore so we can get it from there here we need not to create state of a componant.
 
-- 1 st way is done by creating local state.  
+- 1 st way is done by creating local state.
+- 2nd way put trailer on reduxStore and fetch it for rendering 
+  
 
    
 
