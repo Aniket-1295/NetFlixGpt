@@ -74,7 +74,12 @@ using onAuthStateChange listener
       - Movies *N
       - row * N
 
-      
+- getVideosFromMovieId(trailer) and render it on browse page
+- there are two ways 
+    - we can create local state & make it dynamic.
+    - we can put the trailer on redxStore so we can get it from there here we need not to create state of a componant.
+
+- 1 st way is done by creating local state.  
 
    
 

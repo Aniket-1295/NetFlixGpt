@@ -4,10 +4,12 @@ import { API_OPTIPONS } from "../utils/constant";
 
 const VideoBackround = ({ movieId }) => {
 
+
+
   const [videoKey, setVideoKey] = useState("");
 
 
-
+  
   // const getVideosFromMovieId = async () => {
   //   try {
   //     const data = await fetch(
@@ -41,6 +43,7 @@ const VideoBackround = ({ movieId }) => {
   //   }
   // };
 
+  //rather than th
   useEffect(() => {
     const fetchVideos = async () => {
       try {
@@ -68,7 +71,7 @@ const VideoBackround = ({ movieId }) => {
 
   return (
     <div >
-      <iframe
+      <iframe 
         width="560"
         height="315"
         src={`https://www.youtube.com/embed/${videoKey}?controls=0&autoplay=1&mute=1&loop=1&playlist=${videoKey}`}
