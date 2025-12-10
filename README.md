@@ -82,6 +82,10 @@ using onAuthStateChange listener
 - 1 st way is done by creating local state.
 - 2nd way put trailer on reduxStore and fetch it for rendering 
   
+- create a custom Hook for seperation of Consern 
+- videoBackrund.jsx componant should must show only video backround avoids fetch call inside it 
+
+- useMovieTrailer() customeHook
 
    
 
