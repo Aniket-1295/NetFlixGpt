@@ -9,13 +9,12 @@ const Browse = () => {
   useGetNowPlayingMovies();
   return (
     <>
-      <div className="flex flex-col gap-60">
+      
         <Header />
-        <div>
           <MainVideoContainer />
           <SecondaryContainer />
-        </div>
-      </div>
+       
+     
     </>
   );
 };

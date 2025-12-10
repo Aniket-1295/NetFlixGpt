@@ -18,8 +18,11 @@ const MainVideoContainer = () => {
 
   return (
     <>
-      <VideoBackround  movieId ={id} />
-      <VideoTitle title={title} description={overview} />
+    <div className="pt-[30%] bg-black md:pt-0">
+    <VideoTitle title={title} description={overview} />
+    <VideoBackround  movieId ={id} />
+    </div>
+      
     </>
   );
 };

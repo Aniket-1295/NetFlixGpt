@@ -86,7 +86,7 @@ using onAuthStateChange listener
 - videoBackrund.jsx componant should must show only video backround avoids fetch call inside it 
 
 - useMovieTrailer() customeHook
-
+- Building beautiful videoBackround 
    
 
 
