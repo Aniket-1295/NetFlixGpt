@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import MoviListCatagory from './MoviListCatagory';
 
 const SecondaryContainer = () => {
   return (
-    <div>SecondaryContainer</div>
+    <div>
+
+        <MoviListCatagory />
+        <MoviListCatagory />
+        <MoviListCatagory />
+        <MoviListCatagory />
+
+
+    </div>
   )
 }
 

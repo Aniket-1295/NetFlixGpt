@@ -87,6 +87,21 @@ using onAuthStateChange listener
 
 - useMovieTrailer() customeHook
 - Building beautiful videoBackround 
+
+- Building secondedary container 
+   - MoviListCatagory.jsx
+   - MoviCard.jsx
+   - update the movie slice with  new state.
+        - popularMovies:{},
+        - topRatedMovies:{},
+        - upcomingMovies:{}, 
+
+    - add actions for each of them 
+    - create the custom hook for each of them and update  the store. 
+    
+
+
+
    
 
 
