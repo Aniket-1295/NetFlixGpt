@@ -98,7 +98,9 @@ using onAuthStateChange listener
 
     - add actions for each of them 
     - create the custom hook for each of them and update  the store. 
-    
+
+    - sussfully fetched poisters of all the catagory movies
+    - making a beautiful css using Tailwind CSS(done)
 
 
 

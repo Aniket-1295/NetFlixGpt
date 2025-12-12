@@ -25,7 +25,7 @@ useEffect(() => {
         );
 
         const json = await data.json();
-        const filteredVideos = json?.results.filter((video) => {
+        const filteredVideos = json?.results?.filter((video) => {
           return video.type === "Trailer";
         });
 
