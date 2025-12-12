@@ -102,6 +102,7 @@ using onAuthStateChange listener
     - sussfully fetched poisters of all the catagory movies
     - making a beautiful css using Tailwind CSS(done)
 
+- deployed up till now 
 
 
    
