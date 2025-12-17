@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/slices/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
+import {toggleGptSearchPageView} from "../utils/slices/gptSlice"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -56,19 +57,31 @@ const Header = () => {
       });
   };
 
+  const handleGptTogglePage =()=>{
+
+    dispatch(toggleGptSearchPageView())
+
+  }
+ 
   //get the user from the redux store
 
   const user = useSelector((store) => store.user);
+  const showGptSearchpage = useSelector((store)=>store.gpt.showGptSearchPage)
   return (
     <div className="flex justify-between   ">
       <div className="flex  gap-5 ">
-        <Logo />
+       <div className=" top-0 left-0 md:top-5 md:left-5 z-20">
+       <Logo />
+       </div>
 
         {user && (
           <div className="fixed top-0 right-0 flex gap-5 z-20">
+            <button 
+            onClick={handleGptTogglePage}
+            className="bg-purple-600 p-2 rounded-lg h-10 my-5 text-bold text-white  cursor-pointer z-20">{showGptSearchpage ? "Home Page" : "Gpt Search"}</button>
             <img
               className="w-25 h-25 rounded-full z-20"
-              src={user?.photoURL}
+              src={user?.photoURL} 
               alt="user Photo"
             />
 

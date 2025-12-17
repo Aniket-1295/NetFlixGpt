@@ -104,6 +104,17 @@ using onAuthStateChange listener
 
 - deployed up till now 
 
+-  Ep16:
+- Building GPT Search Page => Movies recommondation system 
+     - Header
+     - Body
+        - Searchbar and Search Button
+        - Suggestions list
+
+- Gpt Search Button and toggle Functionality 
+
+   
+
 
    
 
