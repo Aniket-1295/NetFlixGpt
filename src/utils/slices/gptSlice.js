@@ -8,8 +8,8 @@ const gptSlice = createSlice({
     },
     reducers:{
 
-        toggleGptSearchPageView:(state)=>{
-            state.showGptSearchPage = !state.showGptSearchPage
+        toggleGptSearchPageView:(state,action)=>{
+            state.showGptSearchPage = action.payload
         }
       
     }

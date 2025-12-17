@@ -8,6 +8,9 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/slices/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import {toggleGptSearchPageView} from "../utils/slices/gptSlice"
+import { supportedLanguages } from "../utils/languageConstants";
+import { changeLanuage } from "../utils/slices/configSlice";
+import { clearAll } from "../utils/slices/movieSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -37,6 +40,10 @@ const Header = () => {
         // ...
 
         dispatch(removeUser());
+        dispatch(toggleGptSearchPageView(false))
+        dispatch(changeLanuage("en"))
+        dispatch(clearAll())
+        
         navigate("/login");
       }
     });
@@ -59,7 +66,12 @@ const Header = () => {
 
   const handleGptTogglePage =()=>{
 
-    dispatch(toggleGptSearchPageView())
+    dispatch(toggleGptSearchPageView(true))
+
+  }
+
+  const handleLanguageChange =(e)=>{
+    dispatch(changeLanuage(e.target.value))
 
   }
  
@@ -76,6 +88,28 @@ const Header = () => {
 
         {user && (
           <div className="fixed top-0 right-0 flex gap-5 z-20">
+            {
+              showGptSearchpage &&
+
+              <select
+              onChange={(e)=>{handleLanguageChange(e)}}
+              className="bg-gray-600 p-2 rounded-lg h-10 my-5 text-bold text-white cursor-pointer z-20"
+               name="" id="">
+
+                {
+                 supportedLanguages && supportedLanguages.map((lang)=>{
+
+                  return(
+                    <option key={lang.code} value={lang.code}>{lang.name}</option>
+                  )
+                 }
+                   
+                 )
+                }
+               
+
+              </select>
+            }
             <button 
             onClick={handleGptTogglePage}
             className="bg-purple-600 p-2 rounded-lg h-10 my-5 text-bold text-white  cursor-pointer z-20">{showGptSearchpage ? "Home Page" : "Gpt Search"}</button>

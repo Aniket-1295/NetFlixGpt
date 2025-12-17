@@ -111,7 +111,15 @@ using onAuthStateChange listener
         - Searchbar and Search Button
         - Suggestions list
 
-- Gpt Search Button and toggle Functionality 
+- Gpt Search Button and toggle Functionality.
+- Building Multy Languahe Page
+- done english hindi spanish 
+- bug fixeses while logout 
+- deployed till now
+
+
+
+
 
    
 
