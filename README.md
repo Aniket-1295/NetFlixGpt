@@ -132,6 +132,10 @@ using onAuthStateChange listener
   
 - Better to use Custom HOOK for fetching the data inside any component. 
 
+- Building Movi Suggestion UI 
+- upgrade MoviCard UI
+- deploye Uptill now
+
 
 
 

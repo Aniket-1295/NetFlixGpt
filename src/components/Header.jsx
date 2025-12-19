@@ -66,7 +66,7 @@ const Header = () => {
 
   const handleGptTogglePage =()=>{
 
-    dispatch(toggleGptSearchPageView(true))
+    dispatch(toggleGptSearchPageView(!showGptSearchpage))
 
   }
 

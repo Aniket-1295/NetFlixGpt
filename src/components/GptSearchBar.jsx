@@ -83,15 +83,18 @@ Example output:
     // searchMoviTMDB(movies[0]);
   };
 
-  
+
   const language = useSelector((store) => store.config.lang);
   // console.log("language", language);
   return (
-    <div className=" z-50  justify-center my-[10%]">
-      <form onSubmit={(e) => e.preventDefault()}>
+    <div className="pt-[35%] md:pt-[10%] flex justify-center text-white">
+      <form 
+       className="w-full md:w-1/2 bg-black/90 grid grid-cols-12"
+      onSubmit={(e) => e.preventDefault()}>
         <input
           ref={searchText}
-          className=" z-50  w-1/3 text-white p-4 border border-gray-300 rounded-l-lg font-bold"
+          // className=" z-50  w-1/1 text-white p-4 border border-gray-300 rounded-l-lg font-bold"
+           className=" p-2 m-4 col-span-9 "
           type="text"
           placeholder={
             languages[language]["what Would you like to watch today"]
@@ -101,7 +104,8 @@ Example output:
 
         <button
           onClick={handleGptSearchClick}
-          className="bg-red-600 text-white p-4 rounded-r-lg mx-1 cursor-pointer"
+          // className="bg-red-600 text-white p-4 rounded-r-lg mx-1 cursor-pointer"
+           className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg cursor-pointer"
         >
           {languages[language].search}
         </button>
