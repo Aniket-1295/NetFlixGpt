@@ -117,6 +117,31 @@ using onAuthStateChange listener
 - bug fixeses while logout 
 - deployed till now
 
+- Adding GPT Features to our app
+  - Need to register for GPT API
+  - Get The API KEY
+  - npm i openai
+  - Intilization openai 
+  - but face the issue here openai API are not free so change the plan.
+  - get the Google Gemini API 
+  - npm i @google/genai
+  - Intilization the Gemini 
+  - make an API call successfully.and get the results.
+  - pass to the TMDB APIS and get the Movie Search Results.
+  - generate new Action inside gptSlice and push all the MoviesName and TMDB     movies result in to the central Store.
+  
+- Better to use Custom HOOK for fetching the data inside any component. 
+
+
+
+
+  
+    
+
+
+
+
+
 
 
 
